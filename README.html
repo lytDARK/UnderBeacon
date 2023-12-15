@@ -46,14 +46,25 @@
 适配 mc 版本 : <strong>1.20.2</strong>
 <br>
 <strong>游戏难度：简单</strong>（就这还有人PvL/PvZ/PvB失败怎么敢改普通的）</p>
-<h3 id="点击查看更新内容"><a href="#7%E6%9B%B4%E6%96%B0%E5%86%85%E5%AE%B9">点击查看更新内容</a></h3>
-<h3 id="点击查看api编写推荐规则"><a href="api.html">点击查看api编写推荐规则</a></h3>
+<table>
+<thead>
+<tr>
+<th><a href="#7%E6%9B%B4%E6%96%B0%E5%86%85%E5%AE%B9">点击查看更新内容</a></th>
+<th></th>
+<th><a href="https://github.com/lytDARK/UnderBeacon">点击查看最新版本</a></th>
+<th></th>
+<th><a href="api.html">点击查看api编写推荐规则</a></th>
+</tr>
+</thead>
+</table>
 <h2 id="1简介">1.简介</h2>
-<p><strong>信标之下 (Under Beacon)</strong> 是一类生存战争 (Survival War) ，即拟原版生存 PvP。游戏加快了发育速度和游戏进程，且玩家可以携带一个小技能。玩家一开始被限制边长为880左右的正方形区域内（包括主世界和下界），2支队伍出生在中心信标周围。所有玩家初始一无所有，玩家需要从 0 开始在生存模式发育，逐渐向中心靠近，远离边界，消灭敌队。死亡玩家在40~240秒后可以复活。存活最后的队伍获胜。</p>
+<p><strong>信标之下 (Under Beacon)</strong> 是一类生存战争 (Survival War) ，即拟原版生存 PvP。游戏加快了发育速度和游戏进程。玩家开局被限制边长为880左右的正方形区域内（包括主世界和下界），2支队伍出生在中心信标周围。<strong>玩家可携带一个小技能</strong>，并需要从 0 开始在生存模式发育，随边界收缩逐渐靠近中心，消灭敌队。死亡玩家在40~240秒后可以复活。消灭敌队的队伍获胜。</p>
 <h2 id="2技能">2.技能</h2>
-<p>比赛开始前，玩家可以选一个技能：<br>
-主动技能用[]表示，一般手持指南针按[F]（&quot;key.swapOffhand&quot;）释放；被动技能/分工职业用{}表示，技能默认不可叠加。<br>
-分工职业有：上游走（狩猎）、下游走（探险）、对抗、辅助，上游走一定带有[狩猎]，辅助一定带有{辅助}</p>
+<details><summary><b>技能机制介绍</b></summary>
+<p>比赛开始前，玩家可选一个技能：<br>
+主动技能用[]表示，一般手持指南针按[F]（&quot;key.swapOffhand&quot;）释放；被动技能用{}表示，技能默认不可叠加。<br>
+分工职业用()表示。分工职业有：上游走（狩猎）、下游走（探险）、对抗、辅助，上游走一定带有[狩猎]，辅助一定带有{辅助}</p>
+</details>
 <table>
 <thead>
 <tr>
@@ -63,104 +74,106 @@
 </thead>
 <tbody>
 <tr>
-<td>{下游走}传送</td>
+<td>(下游走)传送</td>
 <td>[传送]冷却:180s，立即传送至一名队友身边，为双方提供1s的完全免伤、10s的4护盾。</td>
 </tr>
 <tr>
-<td>{狩猎}焚风</td>
+<td>(狩猎)焚风</td>
 <td>移速×1.08。攻击狩猎目标生物至少造成8伤害。指南针附魔 抢夺，并能直接击杀多数怪物。<br>[焚风狩猎]冷却:5s，烧杀7格内的狩猎目标，包含绝大多数怪物和资源生物，并吸收7.5格内资源。</td>
 </tr>
 <tr>
-<td>{下游走}深潜</td>
+<td>(下游走)深潜</td>
 <td>{水心}获得潮涌能量与海豚的恩惠</td>
 </tr>
 <tr>
-<td>{对抗}防御</td>
+<td>(对抗)防御</td>
 <td>{岿守}获得20韧性与⅔击退抗性</td>
 </tr>
 <tr>
-<td>{游走}巽风</td>
+<td>(下游走)巽风</td>
 <td>[巽风]开始飞行，手持指南针上升(速度显示在CD处)，手持其它物品静止，按住 左Shift 下降。主动变为[风息]。<br>[风息]结束飞行，主动变为[巽风]。<br>{风神}在空中获得20%免伤。</td>
 </tr>
 <tr>
-<td>{对抗}终击</td>
+<td>(对抗)终击</td>
 <td>[终击]冷却:30s，8格内敌方玩家降低&lt;⅕已损生命&gt;生命值，若击杀则冷却降至5s。无效果时无法释放。</td>
 </tr>
 <tr>
-<td>{对抗}御守</td>
+<td>(对抗)御守</td>
 <td>[御守]冷却:75s，获得80%免伤，100%击退抗性，近战伤害×0.25，攻速×2，持续9s</td>
 </tr>
 <tr>
-<td>{对抗}自爆</td>
+<td>(对抗)自爆</td>
 <td>{自爆}被击败后自爆，造成0~19（越近越高）伤害。</td>
 </tr>
 <tr>
-<td>{对抗}闪现</td>
+<td>(对抗)闪现</td>
 <td>[闪现]：冷却:100s，若视线前方8格附近有空间（可能无处落脚），闪现至此处，并获得1s无敌，3s的20%免伤，无效果时无法释放。</td>
 </tr>
 <tr>
-<td>{辅助}矿工</td>
+<td>(辅助)矿工</td>
 <td>{矿工}带有时运I钻石镐。注意：不要把你的镐子丢给队友<br>{辅助}获得60%免伤，攻速×2，护甲×0.5，近战伤害:2+0.2ad，攻击狩猎目标生物至少造成8伤害</td>
 </tr>
 <tr>
-<td>{狩猎/辅助}花神</td>
+<td>(狩猎/辅助)花神</td>
 <td>[花神]无CD。若主手持小型花，按[F]消耗一朵，给予6格内队友（增益）/敌方（减益）对应迷之炖菜效果。<br>[撷芳狩猎]冷却:5s，给予7格内狩猎目标5s凋零，每0.5s造成1伤害；破坏14×2×14内花草，并吸取9格内非玩家抛出的物品。<br>{辅助}获得60%免伤，攻速×2，护甲×0.5，近战伤害:2+0.2ad，攻击狩猎目标生物至少造成8伤害</td>
 </tr>
 </tbody>
 </table>
 <h2 id="3游戏运行规则">3.游戏运行规则</h2>
-<h3 id="全局修改">全局修改</h3>
-<p><strong>● 地形</strong> 被钳制在了-16~256格内。</p>
-<p><strong>● 挖掘</strong> 10分钟后仍然保留了急迫（2倍挖掘速度，无攻速加成），以平衡挖/放方块的时间差。</p>
 <h3 id="信标增益">信标增益</h3>
-<h4 id="玩家效果">玩家效果</h4>
 <p>在比赛开始时，玩家将会获得 <strong>10分钟</strong> （相当于第一个白天）来自信标的<a href="#%E4%BF%A1%E6%A0%87%E5%A2%9E%E7%9B%8A">信标增益</a>，包括隐身保护，以及（逐渐衰减的）急迫（但无攻速加成）、免伤、力量、速度、跳跃提升。</p>
-<p><strong>● 气息感知</strong> 玩家可以感知到20格内的敌方玩家，以发光的形式呈现，玩家可以蹲下来免于被发现。<br>
-5格内有敌方玩家时，来自信标的隐身保护会被识破，敌方玩家离开（确信）后会重新获得隐身保护。</p>
+<h4 id="玩家效果">玩家效果</h4>
+<p><strong>● 气息感知</strong> 玩家能感知到<strong>20</strong>格内的敌方玩家，以发光的形式呈现，玩家可蹲下以免于被发现。<br>
+5格内有敌方玩家时，隐身保护会被识破。敌方玩家离开后会重新获得隐身保护。</p>
 <h4 id="玩家事件">玩家事件</h4>
 <p><strong>● 玩家死亡</strong> 会保留所有物品，在40秒后复活。若被玩家击败则会产生1个金苹果和3个熟牛排。</p>
 <h3 id="信标失效">信标失效</h3>
-<h4 id="玩家效果-1">玩家效果</h4>
 <p>10分钟后，信标失去力量，无法维持玩家的活动空间。边界开始收缩，玩家失去信标增益，玩家将要为有限的资源与空间而战。</p>
-<p><strong>● 气息感知</strong> 随着隐身保护的消失，玩家可以感知到<strong>48</strong>格内的敌方玩家（参考：64格是可能发现玩家名字的最远距离），以发光的形式呈现，玩家可以蹲下以免于被发现。</p>
-<p>提示：在这个游戏里，空间十分重要。</p>
+<h4 id="玩家效果-1">玩家效果</h4>
+<p><strong>● 气息感知</strong> 随着隐身保护的消失，玩家能感知到<strong>48</strong>格内的敌方玩家（参考：64格是可能发现玩家名字的最远距离），以发光的形式呈现，玩家可蹲下以免于被发现。</p>
+<p>提示：在这个游戏里，空间十分重要。你可能需要利用装备优势和心理驱赶地方位置。</p>
 <h4 id="玩家事件-1">玩家事件</h4>
 <p><strong>● 玩家死亡</strong> 穿着的每件装备有¼概率掉落，同时会掉落部分资源（见下表），若被玩家击败则会产生1个金苹果和3个熟牛排。在40~240秒后复活。</p>
 <table>
 <thead>
 <tr>
-<th style="text-align:center">资源类型</th>
-<th style="text-align:center">最大掉落量</th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
+<th style="text-align:center"></th>
 </tr>
 </thead>
 <tbody>
 <tr>
+<td style="text-align:center"><strong>资源类型</strong></td>
 <td style="text-align:center">钻石块</td>
-<td style="text-align:center">1</td>
-</tr>
-<tr>
 <td style="text-align:center">钻石</td>
-<td style="text-align:center">10</td>
-</tr>
-<tr>
 <td style="text-align:center">铁块</td>
-<td style="text-align:center">2</td>
-</tr>
-<tr>
 <td style="text-align:center">铁锭</td>
-<td style="text-align:center">20</td>
-</tr>
-<tr>
 <td style="text-align:center">铜块</td>
-<td style="text-align:center">4</td>
+<td style="text-align:center">铜锭</td>
 </tr>
 <tr>
-<td style="text-align:center">铜锭</td>
+<td style="text-align:center"><strong>最大掉落量</strong></td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">10</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">20</td>
+<td style="text-align:center">4</td>
 <td style="text-align:center">40</td>
 </tr>
 </tbody>
 </table>
-<h2 id="4一些细节">4.一些细节</h2>
+<h2 id="4游戏机制修改">4.游戏机制修改</h2>
+<h3 id="全局修改">全局修改</h3>
+<p><strong>● 地形</strong> 被钳制在了-16~256格内。</p>
+<p><strong>● 挖掘</strong> 10分钟后仍然保留了急迫（2倍挖掘速度，无攻速加成），以平衡挖/放方块的时间差。</p>
+<details><summary><b>游戏机制</b></summary>
+<p><strong>● 伤害</strong> 边界伤害可以受盔甲保护。</p>
+</details>
 <h3 id="修改">修改</h3>
 <table>
 <thead>
@@ -432,17 +445,55 @@
 <ul class="contains-task-list">
 <li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> 故意破坏服务器，如卡服/崩服</li>
 <li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> 使用超过原版信息的 mod 或 资源包（如小地图/Xray矿透）</li>
-<li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> 未经允许使用指令/赛前研究比赛场地</li>
 <li class="task-list-item enabled"><input class="task-list-item-checkbox"type="checkbox"> 玩脱了，忘了分队/选技能</li>
 </ul>
 <p><strong>此外，玩家还需要遵守VMcP协议！使用原版或等价客户端游玩。在需要时公开你所使用的客户端、MOD、资源包。不建议使用原版或Fabric以外的客户端。</strong></p>
 <h2 id="7更新内容">7.更新内容</h2>
 <ol>
-<li>花神
+<li>狩猎加成
 <ol>
-<li>手感优化，适当调整撷芳狩猎的作用距离。</li>
+<li>(狩猎) 和 (辅助) 的狩猎加成伤害<strong>下调1</strong>。现在攻击狩猎目标生物至少造成<strong>7</strong>伤害。</li>
 </ol>
 </li>
+<li>(辅助)
+<ol>
+<li>分工被动{辅助}：获得60%免伤，攻速×1.5，护甲×0.6，近战伤害:2+<strong>0.3ad</strong>，攻击狩猎目标生物至少造成7伤害。原0.2ad</li>
+</ol>
+</li>
+<li>传送
+<ol>
+<li>[传送]冷却:120s，立即传送至一名队友身边，为双方提供1s的100%免伤 <strong>（在3s内衰减），4回复和3s的60%加速</strong>。</li>
+</ol>
+</li>
+<li>防御
+<ol>
+<li>{岿守}<strong>护甲=5+0.8×额外护甲，击退抗性+80%。</strong></li>
+</ol>
+</li>
+<li>终击
+<ol>
+<li>[终击]冷却:30s，降低8格内敌方玩家，<strong>或14格内最近敌方玩家</strong>&lt;⅕已损生命&gt;，若造成1个击败则冷却降至5s，<strong>造成多个击败则无冷却</strong>。无效果时无法释放。</li>
+</ol>
+</li>
+<li>御守
+<ol>
+<li>[御守]<strong>冷却:60s，获得15护甲，-16韧性，100%击退抗性，额外护甲×0.5，近战伤害×0.5，攻速×1.5，持续10s</strong></li>
+</ol>
+</li>
+<li>自爆
+<ol>
+<li>{自爆}被击败后自爆，造成0~<strong>21</strong>（越近越高）伤害。</li>
+</ol>
+</li>
+<li>闪现
+<ol>
+<li>[闪现]冷却:<strong>40s</strong>，若视线前方8格附近有空间（可能无处落脚），闪现至此处，并获得1s无敌，3s的20%免伤，无效果时无法释放。</li>
+</ol>
+</li>
+<li>矿工</li>
+<li>新增被动：<strong>{柱石}击退抗性+80%</strong></li>
+<li>花神</li>
+<li>手感优化，适当调整撷芳狩猎的作用距离。</li>
 </ol>
 <h3 id="返回顶部"><a href="#%E4%BF%A1%E6%A0%87%E4%B9%8B%E4%B8%8B-%E8%A7%84%E5%88%99%E4%B8%8E%E8%AF%B4%E6%98%8E">返回顶部</a></h3>
 <blockquote>
