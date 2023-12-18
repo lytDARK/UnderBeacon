@@ -1,3 +1,19 @@
+---
+home: true
+heroText: 1
+tagline: 1
+actionText: 快速上手 →
+actionLink: /zh_CN/
+features:
+
+- title: 1
+  details: 1
+- title: 2
+  details: 2
+
+footer: All Rights Reserved | Copyright © 2023-present lytDARK UnderBeacon
+---
+
 # 信标之下 规则与说明
 
 游戏版本：Season 1 Phase 3 Edition 1（1.3.1）——辅助之光
